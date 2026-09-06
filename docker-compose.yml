@@ -7,14 +7,10 @@ services:
       dockerfile: Dockerfile
     shm_size: 2g
     restart: unless-stopped
-    ports:
-      - 127.0.0.1:5432:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       # POSTGRES_DB: postgres
-    volumes:
-      - data:/var/lib/postgresql
     command: |
       postgres
       -c 'max_connections=100'
@@ -28,6 +24,11 @@ services:
       -c 'random_page_cost=1.1'
       -c 'cpu_tuple_cost=0.03'
       -c 'max_worker_processes=16'
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - data:/var/lib/postgresql
+
 
 volumes:
   data:
