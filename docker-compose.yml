@@ -1,7 +1,7 @@
 services:
 
-  postgresql_18:
-    container_name : postgresql_18
+  db:
+    container_name : postgresql-18
     build: 
       context: .
       dockerfile: Dockerfile
