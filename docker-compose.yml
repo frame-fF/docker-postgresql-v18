@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     shm_size: 2g
-    restart: always
+    restart: unless-stopped
     ports:
       - 127.0.0.1:5432:5432
     environment:
