@@ -1,5 +1,4 @@
 services:
-
   db:
     container_name : postgresql-18
     build: 
@@ -28,11 +27,10 @@ services:
       - 127.0.0.1:5432:5432
     volumes:
       - data:/var/lib/postgresql
-
-
+      
 volumes:
   data:
-
+  
 networks:
   default:
     external: true
