@@ -14,7 +14,7 @@ services:
       postgres
       -c 'max_connections=100'
       -c 'default_toast_compression=lz4'
-      -c 'shared_preload_libraries=timescaledb'
+      -c 'shared_preload_libraries=timescaledb,pg_duckdb'
       -c 'effective_cache_size=4GB'
       -c 'shared_buffers=2GB'
       -c 'work_mem=50MB'
