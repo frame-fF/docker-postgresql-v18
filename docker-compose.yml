@@ -23,6 +23,7 @@ services:
       -c 'random_page_cost=1.1'
       -c 'cpu_tuple_cost=0.03'
       -c 'max_worker_processes=16'
+      -c 'io_method=worker'
     ports:
       - 127.0.0.1:5432:5432
     volumes:
